@@ -12,7 +12,6 @@ const getDogsList = async () => {
 getDogsList()
     .then(data => {
         let breeds = data.message;
-        //console.log(data);
         Object.entries(breeds).forEach(name => {
             if(name[1].length > 0) {
                 name[1].forEach((el) => {
@@ -54,7 +53,6 @@ selectDog.addEventListener('change', (e) => {
     const breedName = e.target.value;
     getDogPicture(breedName)
     .then(data => {
-        console.log(data);
         imageDog.alt = breedName;
         imageDog.src = data.message;
     })
